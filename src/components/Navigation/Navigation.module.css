@@ -1,0 +1,16 @@
+.link {
+    display: inline-flex;
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 15px;
+    color: black;
+  }
+  
+  .link:hover {
+    color: lightcoral;
+  }
+  
+  .active {
+    background-color: teal;
+    color: #fff;
+  }
