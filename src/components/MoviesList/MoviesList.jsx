@@ -1,30 +1,15 @@
-import { useState, useEffect } from "react";
-import { getMovies } from "../../movies-api";
+import css from "./MoviesList.module.css";
+import { Link, useLocation } from "react-router-dom";
 
-export default function MoviesList () {
-    const [error, setError] = useState(false);
-    const [movies, setMovies] = useState([]);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        async function fetchMovies() {
-          try {
-            setLoading(true);
-            const data = await getMovies();
-            setMovies(data);
-          } catch (error) {
-            setError(true);
-          } finally {
-            setLoading(false);
-          }
-        }
-    
-        fetchMovies();
-        console.log(fetchMovies())
-      }, []);
+export default function MoviesList ({ movies }) {
 
     return (
-        <>
-        </>
+        <ul className={css.list}>
+                {movies.map((movie) => 
+                    <li key={movie.id}>
+                      <Link>{movie.title}</Link>
+                    </li>
+                )}
+        </ul>
     )
 }

@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import { getMovies } from '../../movies-api';
+import HomePage from "../../pages/HomePage/HomePage";
 // import SearchMovies from "../SearchMovies/SearchMovies";
 // import MoviesList from "../MoviesList/MoviesList";
-console.log(getMovies())
+
 export default function App () {
   return (
     <>
@@ -14,6 +14,7 @@ export default function App () {
         </Routes>
       </Layout>
       {/* <MoviesList /> */}
+      <HomePage />
     </>
   )
 }
