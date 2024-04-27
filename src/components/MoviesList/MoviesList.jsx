@@ -1,5 +1,5 @@
 import css from "./MoviesList.module.css";
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function MoviesList ({ movies }) {
 
@@ -7,7 +7,12 @@ export default function MoviesList ({ movies }) {
         <ul className={css.list}>
                 {movies.map((movie) => 
                     <li key={movie.id}>
-                      <Link>{movie.title}</Link>
+                      <NavLink className={css.link}to="/movie">
+                            <img className={css.movieImg}
+                                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                                alt={movie.original_title}/>
+                            <p className={css.movieTitle}>{movie.original_title}</p>
+                      </NavLink>
                     </li>
                 )}
         </ul>

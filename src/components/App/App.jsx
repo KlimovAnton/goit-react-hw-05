@@ -13,7 +13,6 @@ export default function App () {
           <Route path="/movies" />
         </Routes>
       </Layout>
-      {/* <MoviesList /> */}
       <HomePage />
     </>
   )
