@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function MovieDetails ({ movie: { title, overview, genres, poster_path, release_date, vote_average }}) {
 
@@ -19,8 +19,17 @@ export default function MovieDetails ({ movie: { title, overview, genres, poster
                       <span key={genre.id}>{genre.name}, </span>
                     ))}
                 </p>
-                <p>Realse: {release_date}</p>
+                <p>Release: {release_date}</p>
             </div>
+            <ul>
+                <li>
+                    <NavLink to="cast">Cast:</NavLink>
+                </li>
+                <li>
+                    <NavLink to="reviews">Reviews:</NavLink>
+                </li>
+            </ul>
+            <Outlet />
         </div>
     )
 }

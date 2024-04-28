@@ -1,4 +1,4 @@
-import { useParams, NavLink, Outlet } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import css from "./MovieDetailsPage.module.css"
 import { fetchDetailsMovie } from "../../movie-api";
@@ -30,20 +30,15 @@ export default function MovieDetailsPage () {
 
     }, [moviesId]);
 
+    if(!movie) {
+        return;
+    }
+
     return (
         <div>
             {isLoading && <Loading />}
             {movie && <MovieDetails movie={movie}/>}
             {error && <NotFoundPage />}
-            <ul>
-                <li>
-                    <NavLink to="cast">Cast:</NavLink>
-                    <Outlet />
-                </li>
-                <li>
-                    <NavLink to="reviews">Reviews:</NavLink>
-                </li>
-            </ul>
         </div>
     )
 }
