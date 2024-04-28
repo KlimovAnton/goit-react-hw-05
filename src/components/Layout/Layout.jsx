@@ -4,7 +4,9 @@ import css from "./Layout.module.css";
 export default function Layout({ children }) {
   return (
     <div className={css.container}>
-      <Navigation />
+      <header className={css.header}>
+        <Navigation />
+      </header>
       {children}
     </div>
   );

@@ -1,0 +1,44 @@
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.input {
+    width: 300px;
+    padding: 10px 5px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid teal;
+    border-radius: 15px;
+    color: black;
+  }
+
+  .input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .input:hover, .input:focus {
+    border-bottom: 1px solid lightcoral;
+  }
+  
+  
+  .btn {
+    background-color: transparent;
+    border: 1px solid teal;
+    color: teal;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: border, transform 0.3s ease-in-out;
+    width: 40px;
+  }
+  
+  .btn:hover {
+    border: 1px solid lightcoral;
+    transform: scale(1.1);
+  }
+  
+  .messageEr {
+    text-align: center;
+  }
