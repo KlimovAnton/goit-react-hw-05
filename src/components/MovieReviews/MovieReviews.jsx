@@ -35,13 +35,13 @@ export default function MovieReviews () {
           {movie && movie.length ? (
             <ul>
               {movie.map(({ id, author_details: { username }, content }) => (
-                <li className={css.reviewsContainer} key={id}>
-                  <p className={css.reviewsFilmText}>
-                    <b className={css.reviewsTextFilm}>Author: </b>
+                <li key={id}>
+                  <p>
+                    <b>Author: </b>
                     {username}
                   </p>
-                  <p className={css.reviewsFilmText}>
-                    <b className={css.reviewsTextFilm}>Review: </b>
+                  <p>
+                    <b>Review: </b>
                     {content}
                   </p>
                 </li>
