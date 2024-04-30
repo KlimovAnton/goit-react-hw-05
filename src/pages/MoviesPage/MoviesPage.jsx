@@ -5,6 +5,7 @@ import { fetchSearchFilms } from "../../search-movie-api";
 import { IoSearch } from "react-icons/io5";
 import css from "./MoviesPage.module.css";
 import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error/Error";
 import MovieList from "../../components/MoviesList/MoviesList"
 
 export default function MoviesPage() {
@@ -63,7 +64,6 @@ export default function MoviesPage() {
                 again.
                 </p>
             )}
-
             {error && <Error />}
         </>
     )
